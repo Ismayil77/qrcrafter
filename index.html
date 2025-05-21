@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advanced QR Code Generator</title>
+     <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced QR Code Generator</h1>
+            <p class="description">Create customized QR codes with labels for personal branding, marketing, or sharing information. Works entirely in your browser - no data is sent to any server.</p>
+        </header>
+
+        <div class="app-container">
+            <div class="controls">
+                <div class="tab-container">
+                    <div class="tabs">
+                        <div class="tab active" data-tab="url">URL</div>
+                        <div class="tab" data-tab="text">Text</div>
+                        <div class="tab" data-tab="contact">Contact</div>
+                    </div>
+                    <div class="tab-content active" id="url-tab">
+                        <div class="form-group">
+                            <label for="url-input">Website URL</label>
+                            <input type="text" id="url-input" placeholder="https://example.com" aria-label="Enter website URL for QR code">
+                            <div class="error" id="url-error">Please enter a valid URL (e.g., https://example.com)</div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="text-tab">
+                        <div class="form-group">
+                            <label for="text-input">Text Content</label>
+                            <textarea id="text-input" placeholder="Enter any text to encode in QR code" aria-label="Enter text content for QR code"></textarea>
+                            <div class="error" id="text-error">Please enter some text to encode</div>
+                        </div>
+                    </div>
+                    <div class="tab-content" id="contact-tab">
+                        <div class="form-group">
+                            <label for="name-input">Name</label>
+                            <input type="text" id="name-input" placeholder="John Doe" aria-label="Enter contact name">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone-input">Phone</label>
+                            <input type="text" id="phone-input" placeholder="+1234567890" aria-label="Enter contact phone number">
+                        </div>
+                        <div class="form-group">
+                            <label for="email-input">Email</label>
+                            <input type="text" id="email-input" placeholder="john@example.com" aria-label="Enter contact email address">
+                            <div class="error" id="email-error">Please enter a valid email address</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="label-input">QR Code Label (optional)</label>
+                    <input type="text" id="label-input" placeholder="Company Name or Title" aria-label="Enter optional label for QR code">
+                </div>
+
+                <div class="form-group">
+                    <label for="size-input">QR Code Size</label>
+                    <input type="number" id="size-input" min="100" max="1000" value="256" aria-label="Set QR code size in pixels">
+                </div>
+
+                <button class="toggle-advanced" id="toggle-advanced">
+                    <i>▼</i> Advanced Options
+                </button>
+
+                <div class="advanced-options" id="advanced-options">
+                    <div class="form-group">
+                        <label>QR Code Colors</label>
+                        <div class="color-group">
+                            <input type="color" id="fg-color" value="#000000" aria-label="Select foreground color">
+                            <input type="text" id="fg-color-text" value="#000000" placeholder="Foreground color">
+                        </div>
+                        <div class="color-group" style="margin-top: 10px;">
+                            <input type="color" id="bg-color" value="#ffffff" aria-label="Select background color">
+                            <input type="text" id="bg-color-text" value="#ffffff" placeholder="Background color">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="error-correction">Error Correction Level</label>
+                        <select id="error-correction" aria-label="Select error correction level">
+                            <option value="L">Low (7%)</option>
+                            <option value="M" selected>Medium (15%)</option>
+                            <option value="Q">Quartile (25%)</option>
+                            <option value="H">High (30%)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="button-group">
+                    <button class="primary-btn" id="generate-btn">Generate QR Code</button>
+                    <button class="secondary-btn" id="download-btn" disabled>Download</button>
+                    <button class="reset-btn" id="reset-btn">Reset</button>
+                </div>
+            </div>
+
+            <div class="preview">
+                <h2>Preview</h2>
+                <div class="qr-container" id="qr-preview">
+                    <div class="qr-label" id="qr-label-display"></div>
+                    <div id="qrcode"></div>
+                    <div id="qr-placeholder">Your QR code will appear here</div>
+                </div>
+            </div>
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light mode">🌓</button>
+    </div>
+
+     <script src="script.js"></script>
+</body>
+</html>
