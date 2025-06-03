@@ -19,6 +19,7 @@
             --error-color: #f28b82;
         }
 
+
         * {
             box-sizing: border-box;
             margin: 0;
@@ -163,7 +164,7 @@
 
         .reset-btn {
             background-color: #f1f1f1;
-            color: var(--text-color);
+            color: #333;
         }
 
         button:hover {
