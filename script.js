@@ -1,3 +1,8 @@
+/*
+  Copyright © 2025  MUHAMMAD ISMAYIL 
+  All rights reserved.
+  Unauthorized copying or distribution is strictly prohibited.
+*/
 
         $(document).ready(function() {
             // Theme toggle
