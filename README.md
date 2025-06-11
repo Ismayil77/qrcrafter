@@ -1,29 +1,33 @@
-# QRcrafter
+# QRcrafter – Smart QR Code Generator
 
-🎯 **QRcrafter** is a modern, lightweight web tool to generate QR codes for URLs, text, and contact information — with support for **colored QR codes** for extra flair and customization.
+🎯 **QRcrafter** is a lightweight and modern QR code generator built with HTML, CSS, and JavaScript. It supports URLs, plain text, and vCard contact info — with full color customization and one-click PNG downloads.
+
+---
 
 ## 🚀 Features
 
 - ✅ Generate QR codes for:
   - URLs
   - Plain text
-  - Contact details (vCard format)
-- 🎨 Customize QR colors (foreground/background)
-- 💾 Download QR codes as PNG
-- ⚡ Fast, mobile-friendly, and responsive
-- 🔒 No data stored — everything runs in the browser
+  - Contact cards (vCard format)
+- 🎨 Customize foreground and background colors
+- 💾 Download QR code as PNG
+- 📱 Fully responsive and mobile-friendly design
+- 🔒 100% privacy – all processing happens in the browser, no data stored or sent
 
+---
 
+## 📦 Technologies Used
 
-## 📦 Tech Stack
+- HTML5  
+- CSS3 (with Bootstrap)  
+- Vanilla JavaScript  
 
-- HTML5
-- CSS3 / Bootstrap
-- JavaScript 
+---
 
-## 🛠️ How to Use
+## 🛠️ How to Use (For Developers)
 
-1. Clone the repo:
+1. **Clone the repository:**
    ```bash
    git clone https://github.com/Ismayil77/qrcrafter.git
    cd qrcrafter
